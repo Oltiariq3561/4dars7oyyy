@@ -19,27 +19,23 @@ function App() {
     <Router>
       <MyDragonContext.Provider value={{ cardList, setCardList }}>
         <div className="min-h-screen bg-gray-100 flex flex-col">
-          <nav className="bg-blue-600 text-white p-4">
-            <div className="container mx-auto flex justify-between">
-              <h1 className="text-2xl font-bold">Hello</h1>
-              <div>
-
-                <Link to="/dragn" className="px-4 py-2 hover:bg-blue-700 rounded-md">
-                  Dragn
-                </Link>
-                <Link to="/copy" className="px-4 py-2 hover:bg-blue-700 rounded-md">Copy</Link>
-                <Link to="/customizer" className='px-4 py-2 hover:bg-blue-700 rounded-md'>Customizer</Link>
-                <Link to="/past" className='px-4 py-2 hover:bg-blue-700 rounded-md'>Past</Link>
+          <nav className="bg-gradient-to-r from-gray-600 to-gray-800 text-white p-6 shadow-lg">
+            <div className="container mx-auto flex justify-between items-center">
+            <div className="space-x-6 ml-[500px]" >
+                <Link to="/dragn" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Dragn</Link>
+                <Link to="/copy" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Copy</Link>
+                <Link to="/customizer" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Customizer</Link>
+                <Link to="/past" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Past</Link>
               </div>
             </div>
           </nav>
 
-          <div className="container mx-auto flex-grow p-6">
+          <div className="container mx-auto flex-grow p-8">
             <Routes>
-              <Route path='/copy' element={<Copy />} />
+              <Route path="/copy" element={<Copy />} />
               <Route path="/dragn" element={<Dragn />} />
-              <Route path='/customizer' element={<Customizer />}></Route>
-              <Route path='/past' element={<Past />}></Route>
+              <Route path="/customizer" element={<Customizer />} />
+              <Route path="/past" element={<Past />} />
             </Routes>
           </div>
         </div>

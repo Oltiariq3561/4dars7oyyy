@@ -7,20 +7,21 @@ function Customizer() {
 
   const categories = {
     "Soch Turmagi": [
-      { id: 1, text: "Santimetirovka", type: "hair" },
-      { id: 2, text: "Kal", type: "hair" },
+      { id: 1, text: "kaskat", type: "hair" },
+      { id: 2, text: "oddiy", type: "hair" },
     ],
     Kiyim: [
-      { id: 3, text: "zori", type: "clothing" },
-      { id: 4, text: "skromnisi", type: "clothing" },
+      { id: 3, text: "klassik", type: "clothing" },
+      { id: 4, text: "kocha", type: "clothing" },
     ],
     Aksessuarlar: [
-      { id: 5, text: "mishka", type: "accessory" },
-      { id: 6, text: "klavyatura", type: "accessory" },
+      { id: 5, text: "chehol", type: "accessory" },
+      { id: 6, text: "mishka", type: "accessory" },
     ],
   };
 
   function dragStartHandle(e, card) {
+    e.preventDefault();
     setCurrentCard(card);
   }
 
@@ -41,15 +42,15 @@ function Customizer() {
 
   return (
     <div className="p-6 space-y-8">
-      <div className="flex flex-col space-y-6">
+      <div className="flex gap-8 overflow-x-auto">
         {Object.keys(categories).map((category) => (
-          <div key={category}>
-            <h3 className="text-xl font-bold mb-4">{category}</h3>
-            <div className="flex gap-4">
+          <div key={category} className="flex-shrink-0">
+            <h3 className="text-xl font-bold mb-4 text-green-700">{category}</h3>
+            <div className="flex gap-4 flex-wrap">
               {categories[category].map((card) => (
                 <div
                   key={card.id}
-                  className="p-4 border-2 border-blue-500 bg-white text-center text-lg font-medium rounded-md shadow-md cursor-grab hover:bg-blue-100 transition"
+                  className="p-4 border-2 border-green-500 bg-green-50 text-center text-lg font-medium rounded-md shadow-md cursor-grab hover:bg-green-200 transition"
                   draggable={true}
                   onDragStart={(e) => dragStartHandle(e, card)}
                 >
@@ -62,7 +63,7 @@ function Customizer() {
       </div>
 
       <div
-        className="min-h-[150px] p-6 border-2 border-dashed border-gray-400 bg-gray-100 rounded-lg flex flex-wrap gap-4 items-center justify-center"
+        className="min-h-[150px] p-6 border-2 border-dashed border-gray-400 bg-green-100 rounded-lg flex flex-wrap gap-4 items-center justify-center"
         onDragOver={dragOverHandle}
         onDrop={dropHandle}
       >
@@ -72,7 +73,7 @@ function Customizer() {
           selectedItems.map((item) => (
             <div
               key={item.id}
-              className="p-4 bg-blue-200 rounded-md shadow-md"
+              className="p-4 bg-green-200 rounded-md shadow-md"
             >
               {item.text}
             </div>
@@ -81,14 +82,14 @@ function Customizer() {
       </div>
 
       <button
-        className="px-6 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 transition"
+        className="px-6 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition"
         onClick={showFinalCards}
       >
         ADD
       </button>
 
       {finalCards.length > 0 && (
-        <div className="p-4 bg-gray-50 rounded-md shadow-md">
+        <div className="p-4 bg-green-50 rounded-md shadow-md">
           <h3 className="text-lg font-bold mb-4">Card</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {finalCards.map((item) => (
