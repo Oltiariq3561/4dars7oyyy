@@ -24,8 +24,8 @@ function App() {
             <div className="space-x-6 ml-[500px]" >
                 <Link to="/dragn" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Dragn</Link>
                 <Link to="/copy" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Copy</Link>
-                <Link to="/customizer" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Customizer</Link>
                 <Link to="/past" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Past</Link>
+                <Link to="/customizer" className="text-lg font-medium px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">Customizer</Link>
               </div>
             </div>
           </nav>
